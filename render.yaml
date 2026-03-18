@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: studio-translator
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false
