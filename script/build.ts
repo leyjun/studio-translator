@@ -44,11 +44,12 @@ async function buildAll() {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.devDependencies || {}),
   ];
-  // Always exclude playwright — it's a native binary package and must stay external
+  // Always exclude playwright and anthropic — native/large packages that must stay external
   const externals = [
     ...allDeps.filter((dep) => !allowlist.includes(dep)),
     "playwright",
     "playwright-core",
+    "@anthropic-ai/sdk",
   ];
 
   await esbuild({
