@@ -104,7 +104,7 @@ Use this context to:
       }
 
       const message = await anthropic.messages.create({
-        model: "claude-sonnet-4-5",
+        model: "claude-sonnet-4-5-20251001",
         max_tokens: 1024,
         messages: [
           {
@@ -220,7 +220,7 @@ Use this context to:
 
       // Summarize the chat context using Claude
       const summaryMsg = await anthropic.messages.create({
-        model: "claude_sonnet_4_6",
+        model: "claude-sonnet-4-5-20251001",
         max_tokens: 800,
         system: `You are analyzing a KakaoTalk business channel chat conversation for Mirror by Me (미러 바이 미) photo studio in Seoul.
 Extract and summarize:
